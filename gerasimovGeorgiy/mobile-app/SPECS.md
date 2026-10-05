@@ -4,7 +4,7 @@
 **Course**: Разработка мобильных приложений, осень–зима 2026  
 **Стек**: Expo + TypeScript + React Native
 
-Документ объединяет общую спеку семестра и лабы Welcome/Tabs и useState.
+Документ объединяет общую спеку семестра и лабы. Лабы пары 3–4: `SPECS/lab-usestate.md`, `SPECS/lab-textinput.md`, `SPECS/lab-useeffect.md`, `SPECS/lab-posts.md`, `SPECS/lab-create-post.md`.
 
 ## Overview
 
@@ -20,9 +20,13 @@
 
 | Вкладка | Экран | Статус |
 | --- | --- | --- |
-| Counter | `CounterScreen` | сдано: useState-счётчик |
-| Labs | `HelloWorldScreen` | сдано: Lab 0 Hello World |
-| About | `AboutScreen` | сдано: коротко о курсе |
+| Posts | `PostsScreen` | done: GET posts, FlatList, loading/error/empty |
+| Create | `CreatePostScreen` | done: POST new post |
+| Counter | `CounterScreen` | done: useState counter |
+| Name | `NameScreen` | done: controlled TextInput |
+| Timer | `TimerScreen` | done: useEffect + cleanup |
+| Hello | `HelloWorldScreen` | done: Lab 0 Hello World |
+| About | `AboutScreen` | done: short about the course |
 
 Welcome-экран (`WelcomeScreen`) собран по лабе, но вкладка Home снята: стартовый экран — Counter.
 
@@ -38,12 +42,12 @@ Welcome-экран (`WelcomeScreen`) собран по лабе, но вклад
 
 Цель: каркас нижних вкладок.
 
-- Экран Welcome: заголовок, подзаголовок, кнопка «Начать» → Alert
+- Экран Welcome: title, subtitle, Start button → Alert
 - Минимум 2–3 вкладки, между ними можно ходить
 - Ограничения: View, Text, Pressable/Button, StyleSheet
 - Не делаем: сложную навигацию из кнопки, анимации, UI-kit
 
-Текущее состояние: табы есть (Counter / Labs / About), Welcome без отдельной вкладки.
+Текущее состояние: табы есть (Posts / Create / Counter / Name / Timer / Hello / About), Welcome без отдельной вкладки.
 
 ### Lab — useState, счётчик
 
@@ -53,6 +57,53 @@ Welcome-экран (`WelcomeScreen`) собран по лабе, но вклад
 - Старт с 0; `−` не ниже 0; Reset → 0
 - Только `useState` + StyleSheet; без библиотек, AsyncStorage, сервера, Redux/Zustand
 - Готово, если: три кнопки работают, экран в Tabs, код объясним
+
+Подробно: `SPECS/lab-usestate.md`.
+
+### Lab — TextInput, controlled state
+
+Цель: поле ввода, которым владеет `useState`.
+
+- Экран `NameScreen`: `TextInput` + текст «Hello, {name}» (empty name → «Hello!»)
+- `value` из state, `onChangeText` обновляет state
+- Только `useState` + StyleSheet; без форм-библиотек и сервера
+- Готово, если: ввод сразу отражается в приветствии, поле controlled
+
+Подробно: `SPECS/lab-textinput.md`.
+
+### Lab — useEffect, таймер
+
+Цель: side effect после отрисовки.
+
+- Вариант 1: секунды с момента открытия экрана
+- `useEffect` с `[]` (один раз при mount)
+- Cleanup: `clearInterval`, чтобы не тикало после ухода с вкладки
+- Без реального fetch/API
+
+Подробно: `SPECS/lab-useeffect.md`.
+
+### Lab — Posts list
+
+Цель: вкладка Posts грузит посты с API курса.
+
+- `getPosts` в `src/api.ts`, `fetch` только внутри эффекта (`useFocusEffect` / `useEffect`)
+- `FlatList` + `keyExtractor`
+- Состояния: loading, error + Retry, empty
+- Pull-to-refresh
+- Без axios / react-query / auth
+
+Подробно: `SPECS/lab-posts.md`.
+
+### Lab — Create post
+
+Цель: форма создаёт пост через POST.
+
+- Controlled Title + body, кнопка Publish
+- Пустые поля не отправляются; во время отправки кнопка неактивна
+- Успех → очистить поля; ошибка → Alert
+- В заголовке фамилия (`Gerasimov: …`); чужие посты не трогаем
+
+Подробно: `SPECS/lab-create-post.md`.
 
 ## Цели семестра
 
@@ -82,9 +133,17 @@ Welcome-экран (`WelcomeScreen`) собран по лабе, но вклад
 
 Список пользователей (поиск, роль, пагинация), CRUD постов, тема и выход.
 
-### API
+### API (пара 4)
 
-Base URL: `https://cloud.kit-imi.info`
+Base URL: `http://185.233.185.109:8080/api/v1` (без авторизации).
+
+| Method | Path | Назначение |
+| --- | --- | --- |
+| GET | `/health` | живость сервера |
+| GET | `/posts` | список постов |
+| POST | `/posts` | создать пост |
+
+Дальше по семестру (ещё не подключено): `https://cloud.kit-imi.info`.
 
 | Method | Path | Auth | Назначение |
 | --- | --- | --- | --- |
@@ -107,7 +166,7 @@ Base URL: `https://cloud.kit-imi.info`
 | Language | TypeScript |
 | Navigation | React Navigation: bottom tabs (+ stack позже) |
 | State | сейчас `useState`; дальше Zustand |
-| HTTP | axios + interceptors |
+| HTTP | `fetch` (`src/api.ts`); axios later |
 | Storage | AsyncStorage |
 | Package manager | npm |
 
@@ -116,7 +175,7 @@ Base URL: `https://cloud.kit-imi.info`
 1. Lab 0 — Expo skeleton, Hello World
 2. Welcome + Bottom Tabs
 3. useState — счётчик
-4. useEffect + JSONPlaceholder
+4. useEffect + fetch posts (course API)
 5. useMemo
 6. axios + auth + Zustand
 7. Users list

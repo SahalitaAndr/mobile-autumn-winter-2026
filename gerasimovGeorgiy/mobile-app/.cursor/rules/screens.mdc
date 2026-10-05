@@ -9,7 +9,10 @@ alwaysApply: false
 - Функциональный компонент, default export
 - Хуки только на верхнем уровне, без мутации state напрямую
 - Цвета из `src/theme/colors.ts`, не хардкодить `#fff` / `#111`
-- Счётчик: `setCount(c => …)`, `−` не ниже 0
+- Counter: `setCount(c => …)`, `−` stays at 0 or above
+- TextInput всегда controlled: и `value`, и `onChangeText`
+- `useEffect` / `useFocusEffect`: `fetch` только внутри эффекта, не в теле компонента
+- Списки: `FlatList` + `keyExtractor`, не `map` в `ScrollView`
 
 ```tsx
 // ❌

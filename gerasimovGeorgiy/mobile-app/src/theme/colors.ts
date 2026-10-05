@@ -4,4 +4,5 @@ export const colors = {
   textPrimary: '#E6E9EF',
   textSecondary: '#9AA4B2',
   accent: '#5EEAD4',
+  error: '#F87171',
 } as const;

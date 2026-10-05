@@ -9,7 +9,8 @@ alwaysApply: true
 
 - Стек: Expo SDK 57, React Native, TypeScript. Документация: https://docs.expo.dev/versions/v57.0.0/
 - Экраны в `src/screens/<Name>/<Name>Screen.tsx`, не сваливать всё в `App.tsx`
-- Навигация: Bottom Tabs в `App.tsx`. Сейчас вкладки Counter, Labs, About
+- Навигация: Bottom Tabs в `App.tsx`. Сейчас вкладки Posts, Create, Counter, Name, Timer, Hello, About
 - Стили: `StyleSheet` + цвета из `src/theme/colors.ts`. Без новых UI-kit и лишних библиотек, пока спека не просит
+- HTTP: `fetch` через `src/api.ts` (пара 4). axios — позже, когда спека попросит
 - Лабы хуков — только заявленный хук (useState / useEffect / useMemo), без Zustand/Redux, пока нет лабы
-- Тексты UI на русском
+- UI copy in English

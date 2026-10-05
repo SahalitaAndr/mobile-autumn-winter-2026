@@ -4,8 +4,8 @@ import { colors } from '../../theme/colors';
 export default function AboutScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>О приложении</Text>
-      <Text style={styles.subtitle}>Учебный проект курса мобильной разработки, СВФУ</Text>
+      <Text style={styles.title}>About</Text>
+      <Text style={styles.subtitle}>Course project for mobile development, NEFU</Text>
     </View>
   );
 }

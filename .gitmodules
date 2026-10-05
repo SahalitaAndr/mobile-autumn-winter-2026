@@ -1,0 +1,3 @@
+[submodule "gerasimovGeorgiy/go-server"]
+	path = gerasimovGeorgiy/go-server
+	url = https://github.com/arri1/go-server.git
