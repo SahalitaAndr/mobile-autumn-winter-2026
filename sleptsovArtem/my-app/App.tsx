@@ -6,8 +6,9 @@ import AboutScreen from './src/screens/AboutScreen';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
+const Tab = createBottomTabNavigator();
+
 export default function App() {
-  const Tab = createBottomTabNavigator();
   return (
     <NavigationContainer>
       <Tab.Navigator>
