@@ -65,14 +65,4 @@ npm start        # Expo Go
 
 ## Бэкенд (go-server)
 
-Локально:
-
-```bash
-cd go-server
-docker compose up --build
-```
-
-- API: http://localhost:8080
-- Swagger: http://localhost:8080/swagger/index.html
-
 Боевой инстанс: http://185.233.185.109:8080/swagger/index.html

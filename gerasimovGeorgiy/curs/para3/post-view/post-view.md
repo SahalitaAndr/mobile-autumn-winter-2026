@@ -2,6 +2,9 @@
 
 **Цель:** тап по карточке в списке открывает экран поста. Данные — `GET /api/v1/posts/{id}`.
 
+Боевой сервер: [Swagger](http://185.233.185.109:8080/swagger/index.html) · база `http://185.233.185.109:8080/api/v1`  
+Один пост: `GET http://185.233.185.109:8080/api/v1/posts/{id}`
+
 Нужно: список из [`posts-list`](../posts-list/posts-list.md) и `getPost` из [`api`](../api/api.md).
 
 Создание поста **не делаем**. Только смотрим.
@@ -14,7 +17,7 @@
 Цель: экран PostViewScreen показывает один пост с API курса.
 
 Стек: Expo + TypeScript, fetch, useEffect, useState.
-Источник: GET /api/v1/posts/{id} (функция getPost из api.ts).
+Источник: GET http://185.233.185.109:8080/api/v1/posts/{id} (функция getPost из api.ts).
 Навигация: тап по карточке в списке → экран поста.
 UI: заголовок, полный текст, дата; кнопка «Назад».
 Состояния: загрузка → ActivityIndicator; ошибка / 404 → текст + «Назад».
