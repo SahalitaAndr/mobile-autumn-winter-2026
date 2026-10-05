@@ -1,19 +1,31 @@
 # gerasimovGeorgiy
 
-Учебное мобильное приложение курса (React Native + Expo + TypeScript).
+Материалы курса **Разработка мобильного приложения** (React Native + Expo + TypeScript).
 
-Бэкенд лежит рядом сабмодулем: [go-server](https://github.com/arri1/go-server) (`gerasimovGeorgiy/go-server`). Это REST API на Go (CRUD постов, Postgres, Swagger).
+## Задания
+
+Все лабы и ДЗ — в [`curs/`](curs):
+
+- [Пара 1](curs/para1) — старт, ИИ, первый PR
+- [Пара 2](curs/para2) — JSX, Welcome, Bottom Tabs
+- [Пара 3](curs/para3) — useState, TextInput, useEffect, просмотр постов
+
+Не копируй материалы себе в папку. Читай задание здесь, делай работу **в своей** папке `фамилияИмя`.
+
+---
+
+Учебное приложение курса лежит в [`mobile-app/`](mobile-app).  
+Бэкенд — сабмодуль [go-server](https://github.com/arri1/go-server) (`go-server/`). REST API на Go (CRUD постов, Postgres, Swagger).
 
 ## Папки
 
 ```
 gerasimovGeorgiy/
 ├── README.md
-├── curs/                 # конспекты пар
+├── curs/                 # задания по парам
 │   ├── para1/
 │   ├── para2/
-│   ├── para3/
-│   └── para4/
+│   └── para3/
 ├── go-server/            # git submodule → arri1/go-server
 └── mobile-app/           # Expo-проект
     ├── .cursor/          # правила для Cursor
@@ -49,12 +61,7 @@ npm start        # Expo Go
 - [x] Лаба useState: CounterScreen в Tabs (`SPECS/lab-usestate.md`)
 - [x] Controlled TextInput: NameScreen (`SPECS/lab-textinput.md`)
 - [x] Лаба useEffect: таймер с cleanup (`SPECS/lab-useeffect.md`)
-
-## Пара 4
-
-- [x] Course posts API (`src/api.ts`: GET, POST)
-- [x] Posts: FlatList, loading / error / empty, pull-to-refresh (`SPECS/lab-posts.md`)
-- [x] Create: controlled form → POST (`SPECS/lab-create-post.md`)
+- [x] Просмотр списка постов (`SPECS/lab-posts.md`)
 
 ## Бэкенд (go-server)
 

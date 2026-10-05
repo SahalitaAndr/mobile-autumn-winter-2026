@@ -11,4 +11,4 @@
 
 Порядок: теория → Tabs → useState → раздать ДЗ.
 
-> **Пара 3:** живая лаба со счётчиком — в [`para3/usestate-lab`](../para3/usestate-lab/usestate-lab.md). Здесь в `use-state` остаётся теория и шпаргалка; практику на паре ведём там.
+> **Пара 3:** живая лаба со счётчиком — в [`para3/usestate-lab`](../para3/usestate-lab/usestate-lab.md), дальше TextInput, `useEffect` и просмотр постов. Здесь в `use-state` остаётся теория и шпаргалка; практику на паре ведём там.
