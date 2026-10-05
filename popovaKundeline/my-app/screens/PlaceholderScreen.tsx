@@ -1,0 +1,10 @@
+import {View, Text} from 'react-native';
+
+
+export default function PlaceholderScreen() {
+    return (
+        <View>
+            <Text>Placeholder</Text>
+        </View>
+);
+}
