@@ -4,10 +4,10 @@ import { colors } from '../../theme/colors';
 export default function WelcomeScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Добро пожаловать</Text>
-      <Text style={styles.subtitle}>Георгий Герасимов · мобильная разработка</Text>
-      <Pressable style={styles.button} onPress={() => Alert.alert('Поехали')}>
-        <Text style={styles.buttonText}>Начать</Text>
+      <Text style={styles.title}>Welcome</Text>
+      <Text style={styles.subtitle}>Georgiy Gerasimov · mobile development</Text>
+      <Pressable style={styles.button} onPress={() => Alert.alert("Let's go")}>
+        <Text style={styles.buttonText}>Start</Text>
       </Pressable>
     </View>
   );

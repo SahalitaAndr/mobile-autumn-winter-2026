@@ -11,13 +11,16 @@ gerasimovGeorgiy/
 ├── README.md
 ├── curs/                 # конспекты пар
 │   ├── para1/
-│   └── para2/
+│   ├── para2/
+│   ├── para3/
+│   └── para4/
 ├── go-server/            # git submodule → arri1/go-server
 └── mobile-app/           # Expo-проект
     ├── .cursor/          # правила для Cursor
     ├── SPECS.md          # объединённая спецификация
+    ├── SPECS/            # lab specs (useState … posts)
     ├── App.tsx           # Bottom Tabs
-    └── src/screens/      # Counter, Labs (Hello World), About, Welcome
+    └── src/screens/      # Posts, Create, Counter, Name, Timer, Hello, About
 ```
 
 После клонирования курса подтяни сабмодуль:
@@ -40,6 +43,18 @@ npm start        # Expo Go
 ```
 
 Для iOS нужен Xcode, для Android — Android Studio. Можно открыть проект в Expo Go по QR-коду.
+
+## Пара 3
+
+- [x] Лаба useState: CounterScreen в Tabs (`SPECS/lab-usestate.md`)
+- [x] Controlled TextInput: NameScreen (`SPECS/lab-textinput.md`)
+- [x] Лаба useEffect: таймер с cleanup (`SPECS/lab-useeffect.md`)
+
+## Пара 4
+
+- [x] Course posts API (`src/api.ts`: GET, POST)
+- [x] Posts: FlatList, loading / error / empty, pull-to-refresh (`SPECS/lab-posts.md`)
+- [x] Create: controlled form → POST (`SPECS/lab-create-post.md`)
 
 ## Бэкенд (go-server)
 
